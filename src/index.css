@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+
+  --color-healthcare-50: #fdf2f2;
+  --color-healthcare-100: #fde8e8;
+  --color-healthcare-200: #fbd5d5;
+  --color-healthcare-300: #f8b4b4;
+  --color-healthcare-400: #f98080;
+  --color-healthcare-500: #f05252;
+  --color-healthcare-600: #e02424;
+  --color-healthcare-700: #c81e1e;
+  --color-healthcare-800: #9b1c1c;
+  --color-healthcare-900: #771d1d;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+}
+
+/* Custom Scrollbar using Tailwind utilities where possible */
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 rounded-full hover:bg-slate-300;
+  }
+}
+
+@utility glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
