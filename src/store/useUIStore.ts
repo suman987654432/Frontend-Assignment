@@ -9,7 +9,7 @@ interface UIState {
 
 export const useUIStore = create<UIState>((set) => ({
   viewMode: 'grid',
-  isSidebarOpen: true,
+  isSidebarOpen: false,
   setViewMode: (viewMode) => set({ viewMode }),
   toggleSidebar: () => set((state) => ({ isSidebarOpen: !state.isSidebarOpen })),
 }));

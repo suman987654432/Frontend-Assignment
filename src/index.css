@@ -48,3 +48,12 @@
 @utility glass-card {
   @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
 }
+
+@keyframes notification-blink {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+@utility animate-notification-blink {
+  animation: notification-blink 1.5s ease-in-out infinite;
+}

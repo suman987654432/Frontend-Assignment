@@ -68,13 +68,19 @@ export function DashboardLayout({ children }: { children: ReactNode }) {
         }`}
       >
         <div className="h-full flex flex-col">
-          <div className="h-16 flex items-center px-6 border-b border-slate-200">
+          <div className="h-16 flex items-center justify-between px-6 border-b border-slate-200">
             <div className="flex items-center gap-2.5">
               <div className="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center">
                 <Plus className="text-white w-5 h-5" />
               </div>
               <span className="text-lg font-bold text-slate-900 tracking-tight">HealthCore</span>
             </div>
+            <button 
+              onClick={toggleSidebar}
+              className="p-2 -mr-2 text-slate-500 hover:bg-slate-100 rounded-md lg:hidden"
+            >
+              <X className="w-5 h-5" />
+            </button>
           </div>
 
           <div className="flex-1 overflow-y-auto py-6 px-4 space-y-8">
@@ -152,7 +158,7 @@ export function DashboardLayout({ children }: { children: ReactNode }) {
               onClick={triggerNotification}
             >
               <Bell className="w-5 h-5" />
-              <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-red-600 rounded-full border-2 border-white" />
+              <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-red-600 rounded-full border-2 border-white animate-notification-blink" />
             </Button>
             
             <div className="h-8 w-px bg-slate-200 mx-1" />
