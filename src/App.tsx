@@ -1,7 +1,7 @@
-import React, { useEffect, Suspense, lazy } from 'react';
+import { useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from './services/firebase';
+import { auth } from './services/firebase.ts';
 import { useAuthStore } from './store/useAuthStore';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { DashboardLayout } from './layouts/DashboardLayout';

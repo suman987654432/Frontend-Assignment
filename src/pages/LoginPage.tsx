@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../services/firebase.ts';
 import { useAuthStore } from '../store/useAuthStore';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
-import { Plus, HeartPulse } from 'lucide-react';
+import { HeartPulse } from 'lucide-react';
 import { toast } from 'sonner';
 
 export function LoginPage() {

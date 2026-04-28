@@ -1,4 +1,4 @@
-import React from 'react';
+import { type ReactNode } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { 
   LayoutDashboard, 
@@ -16,7 +16,6 @@ import { useAuthStore } from '../store/useAuthStore';
 import { useUIStore } from '../store/useUIStore';
 import { auth } from '../services/firebase.ts';
 import { Button } from '../components/ui/Button';
-import { Input } from '../components/ui/Input';
 import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/Avatar';
 
 const navItems = [
@@ -25,7 +24,7 @@ const navItems = [
   { icon: BarChart3, label: 'Analytics', path: '/analytics' },
 ];
 
-export function DashboardLayout({ children }: { children: React.ReactNode }) {
+export function DashboardLayout({ children }: { children: ReactNode }) {
   const { user, setUser } = useAuthStore();
   const { isSidebarOpen, toggleSidebar } = useUIStore();
   const navigate = useNavigate();

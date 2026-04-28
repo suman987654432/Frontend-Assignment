@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { 
   LayoutGrid, 
   List, 
   Search, 
-  MoreHorizontal, 
   Phone, 
   Mail, 
   Calendar,
   Plus,
   ArrowRight,
   Edit,
-  Trash2,
-  X
+  Trash2
 } from 'lucide-react';
 import { usePatientStore } from '../store/usePatientStore';
 import type { Patient } from '../store/usePatientStore';
@@ -45,7 +43,6 @@ export function PatientsPage() {
     patients, 
     setPatients, 
     loading, 
-    setLoading, 
     addPatient,
     updatePatient,
     deletePatient,
