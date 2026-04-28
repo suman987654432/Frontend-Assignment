@@ -48,7 +48,7 @@ export function DashboardLayout({ children }: { children: ReactNode }) {
           badge: '/vite.svg',
           vibrate: [200, 100, 200],
           tag: 'new-patient'
-        });
+        } as any);
       } else {
         // Fallback for local dev
         new Notification('HealthCore Alert', {
