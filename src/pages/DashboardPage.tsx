@@ -74,7 +74,7 @@ export function DashboardPage() {
           <CardHeader>
             <CardTitle>Patient Visits Trend</CardTitle>
           </CardHeader>
-          <CardContent className="h-[300px]">
+          <CardContent className="h-[250px] md:h-[300px]">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={data}>
                 <defs>
@@ -92,6 +92,7 @@ export function DashboardPage() {
                   dy={10}
                 />
                 <YAxis 
+                  hide={window.innerWidth < 640}
                   axisLine={false} 
                   tickLine={false} 
                   tick={{ fill: '#64748b', fontSize: 12 }}

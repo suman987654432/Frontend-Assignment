@@ -150,10 +150,10 @@ export function PatientsPage() {
 
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Patients Directory</h1>
-          <p className="text-slate-500 mt-1">Manage and monitor patient records and statuses.</p>
+          <p className="text-slate-500 mt-1 text-sm">Manage and monitor patient records and statuses.</p>
         </div>
         
         <div className="flex items-center gap-3">
@@ -190,7 +190,7 @@ export function PatientsPage() {
 
           <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
             <DialogTrigger asChild>
-              <Button className="gap-2 shadow-lg shadow-primary-600/20" onClick={() => handleOpenModal()}>
+              <Button className="gap-2 shadow-lg shadow-primary-600/20 w-full sm:w-auto" onClick={() => handleOpenModal()}>
                 <Plus className="w-4 h-4" />
                 Add Patient
               </Button>
@@ -388,7 +388,8 @@ export function PatientsPage() {
         </div>
       ) : (
         <Card className="overflow-hidden border-slate-200 shadow-xl shadow-slate-100">
-          <Table>
+          <div className="overflow-x-auto">
+            <Table>
             <TableHeader className="bg-slate-50/50">
               <TableRow>
                 <TableHead className="font-bold text-slate-900">Patient Details</TableHead>
@@ -453,7 +454,8 @@ export function PatientsPage() {
                 </TableRow>
               ))}
             </TableBody>
-          </Table>
+            </Table>
+          </div>
         </Card>
       )}
     </div>

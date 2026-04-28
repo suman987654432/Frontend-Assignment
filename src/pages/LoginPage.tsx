@@ -38,7 +38,7 @@ export function LoginPage() {
   return (
     <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
       <div className="max-w-md w-full">
-        <div className="text-center mb-10">
+        <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-2xl mb-6 shadow-xl shadow-primary-500/20">
             <HeartPulse className="text-white w-10 h-10" />
           </div>
@@ -46,7 +46,7 @@ export function LoginPage() {
           <p className="text-slate-500 mt-2">B2B Healthcare Management System</p>
         </div>
 
-        <div className="bg-white p-8 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100">
+        <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100">
           <form onSubmit={handleLogin} className="space-y-6">
             <Input
               label="Email Address"

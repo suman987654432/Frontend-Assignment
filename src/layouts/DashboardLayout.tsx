@@ -35,16 +35,27 @@ export function DashboardLayout({ children }: { children: ReactNode }) {
     navigate('/login');
   };
 
-  const triggerNotification = () => {
-    if ('Notification' in window) {
-      Notification.requestPermission().then(permission => {
-        if (permission === 'granted') {
-          new Notification('HealthCore Alert', {
-            body: 'New Patient Added: John Doe',
-            icon: '/vite.svg'
-          });
-        }
-      });
+  const triggerNotification = async () => {
+    if (!('Notification' in window)) return;
+    
+    const permission = await Notification.requestPermission();
+    if (permission === 'granted') {
+      const registration = await navigator.serviceWorker.ready;
+      if (registration) {
+        registration.showNotification('HealthCore Alert', {
+          body: 'New Patient Registration: Rajesh Kumar',
+          icon: '/vite.svg',
+          badge: '/vite.svg',
+          vibrate: [200, 100, 200],
+          tag: 'new-patient'
+        });
+      } else {
+        // Fallback for local dev
+        new Notification('HealthCore Alert', {
+          body: 'New Patient Added',
+          icon: '/vite.svg'
+        });
+      }
     }
   };
 
@@ -162,7 +173,7 @@ export function DashboardLayout({ children }: { children: ReactNode }) {
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 overflow-y-auto p-8 custom-scrollbar bg-white">
+        <main className="flex-1 overflow-y-auto p-4 md:p-8 custom-scrollbar bg-white">
           <div className="max-w-7xl mx-auto">
             {children}
           </div>

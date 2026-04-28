@@ -46,7 +46,7 @@ export function AnalyticsPage() {
           <CardHeader>
             <CardTitle>Patient Growth & Revenue</CardTitle>
           </CardHeader>
-          <CardContent className="h-[350px]">
+          <CardContent className="h-[250px] md:h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={monthlyData}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
@@ -58,6 +58,7 @@ export function AnalyticsPage() {
                   dy={10}
                 />
                 <YAxis 
+                  hide={window.innerWidth < 640}
                   axisLine={false} 
                   tickLine={false} 
                   tick={{ fill: '#64748b', fontSize: 12 }}
@@ -88,7 +89,7 @@ export function AnalyticsPage() {
           <CardHeader>
             <CardTitle>Department Performance</CardTitle>
           </CardHeader>
-          <CardContent className="h-[350px]">
+          <CardContent className="h-[250px] md:h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={monthlyData}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
@@ -100,6 +101,7 @@ export function AnalyticsPage() {
                   dy={10}
                 />
                 <YAxis 
+                  hide={window.innerWidth < 640}
                   axisLine={false} 
                   tickLine={false} 
                   tick={{ fill: '#64748b', fontSize: 12 }}
@@ -115,15 +117,15 @@ export function AnalyticsPage() {
           <CardHeader>
             <CardTitle>Patient Distribution</CardTitle>
           </CardHeader>
-          <CardContent className="h-[350px]">
+          <CardContent className="h-[250px] md:h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
                   data={patientDistribution}
                   cx="50%"
                   cy="50%"
-                  innerRadius={80}
-                  outerRadius={120}
+                  innerRadius={window.innerWidth < 640 ? 60 : 80}
+                  outerRadius={window.innerWidth < 640 ? 90 : 120}
                   paddingAngle={8}
                   dataKey="value"
                   stroke="none"
